@@ -28,32 +28,51 @@ Program to implement univariate Linear Regression to fit a straight line using l
 
 
 import numpy as np
+
 import matplotlib.pyplot as plt
 
 X=np.array(eval(input()))
+
 Y=np.array(eval(input()))
 
 X_mean=np.mean(X)
+
 Y_mean=np.mean(Y)
 
 num=0
+
 den=0 
+
 for i in range(len(X)):
+
   num+=(X[i]-X_mean)*(Y[i]-Y_mean)
+  
   den+=(X[i]-X_mean)**2
 
+
 m=num/den
+
 b=Y_mean-m*X_mean
+
 print("slope",m)
+
 print("y-predicted",b,"\n")
 
+
 y_pred = m*X + b
+
 print(y_pred,"\n")
+
 plt.scatter(X,Y)
+
 plt.plot(X,y_pred,color="green")
+
 plt.show()
+
 ## Output:
-<img width="953" height="856" alt="Screenshot 2026-04-20 143438" src="https://github.com/user-attachments/assets/e692a59f-2930-4bcf-bbf3-6d3f9890cdcc" />
+
+<img width="990" height="746" alt="image" src="https://github.com/user-attachments/assets/83d6f9ec-5db6-4ef8-b079-2269ba7642d5" />
+
 
 
 
